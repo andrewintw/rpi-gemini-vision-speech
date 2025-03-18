@@ -10,7 +10,7 @@ import pygame
 import RPi.GPIO as GPIO  # 新增 GPIO 支援
 
 # 直接設定變數（之後可以改為從設定檔讀取）
-GEMINI_API_KEY = "AIzaSyDt7LRWsHFYaFeOh46ZHfF1NQbJQ6Pjbow"
+GEMINI_API_KEY = "<your-gemini-api-key>"
 BUTTON_PIN = 17  # GPIO17 用於拍照按鈕
 
 # 初始化 GPIO

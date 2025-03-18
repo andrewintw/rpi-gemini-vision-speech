@@ -14,11 +14,16 @@
 1. 建議先更新 pip：
 ```bash
 python -m pip install --upgrade pip
+# 或使用
+sudo pip3 install --upgrade pip
 ```
 
-2. 安裝必要的 Python 套件：
+2. 安裝相依套件（選擇其中一種方式）：
 ```bash
-# 使用 requirements.txt 安裝所有套件
+# 一般使用者安裝
+pip install -r requirements.txt
+
+# 如果遇到權限問題，使用 sudo
 sudo pip3 install -r requirements.txt
 
 # 或手動安裝個別套件
