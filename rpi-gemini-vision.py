@@ -10,7 +10,7 @@ import pygame
 import RPi.GPIO as GPIO  # 新增 GPIO 支援
 
 # 直接設定變數（之後可以改為從設定檔讀取）
-GEMINI_API_KEY = "<your-gemini-api-key>"
+GEMINI_API_KEY = "<your_gemini_api_key>"
 BUTTON_PIN = 17  # GPIO17 用於拍照按鈕
 
 # 初始化 GPIO
@@ -18,12 +18,14 @@ def setup_gpio():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+# 建立必要的目錄
+os.makedirs('images/captures', exist_ok=True)
+os.makedirs('audio', exist_ok=True)
+
 class CameraModule:
     def __init__(self):
         self.camera = None
-        # 確保圖片存放路徑存在
-        self.image_dir = os.path.join(os.path.dirname(__file__), 'images', 'captures')
-        os.makedirs(self.image_dir, exist_ok=True)
+        self.image_dir = 'images/captures'
     
     def initialize_camera(self):
         """開啟攝影機"""
@@ -111,10 +113,7 @@ class TTSModule:
     def __init__(self):
         # 初始化 pygame 用於音訊播放
         pygame.mixer.init()
-        
-        # 確保輸出目錄存在
-        self.output_dir = os.path.join(os.path.dirname(__file__), 'audio')
-        os.makedirs(self.output_dir, exist_ok=True)
+        self.output_dir = 'audio'
     
     def text_to_speech(self, text):
         """將文字轉換成語音並播放"""
