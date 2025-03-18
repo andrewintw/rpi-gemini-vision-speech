@@ -1,0 +1,14 @@
+[Unit]
+Description=Raspberry Pi Gemini Vision Service
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/RPi_Gemini_Vision
+ExecStart=/usr/bin/python3 /home/pi/RPi_Gemini_Vision/rpi-gemini-vision.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target 
