@@ -36,6 +36,10 @@ sudo pip3 install pygame            # 音訊播放
 sudo pip3 install RPi.GPIO          # GPIO 控制
 ```
 
+```
+sudo apt install python3-opencv
+```
+
 ## 專案結構
 
 ```
