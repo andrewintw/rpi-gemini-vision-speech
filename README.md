@@ -18,15 +18,8 @@ python -m pip install --upgrade pip
 sudo pip3 install --upgrade pip
 ```
 
-2. 安裝相依套件（選擇其中一種方式）：
+2. 安裝相依套件：
 ```bash
-# 一般使用者安裝
-pip install -r requirements.txt
-
-# 如果遇到權限問題，使用 sudo
-sudo pip3 install -r requirements.txt
-
-# 或手動安裝個別套件
 sudo pip3 install google-genai      # Google Gemini API
 sudo pip3 install opencv-python     # 攝影機控制與圖片處理
 sudo pip3 install pillow            # 圖片處理
